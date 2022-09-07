@@ -8,7 +8,7 @@ container image for OpenShift.
 * Create a new project
 
   ```
-  oc new-project jenkins-builder
+  oc new-project test-jenkins-builder
   ```
 
 * For OKD/Minishift import jenkins-persistent template - for some reasons it's
@@ -21,7 +21,7 @@ container image for OpenShift.
 * Start a new Jenkins instance
 
   ```
-  oc process -n openshift jenkins-persistent -p MEMORY_LIMIT=1024M|oc apply -f- -n jenkins-builder
+  oc process -n openshift jenkins-persistent -p MEMORY_LIMIT=1024M|oc apply -f- -n test-jenkins-builder
   oc set env dc/jenkins \
   OVERRIDE_PV_CONFIG_WITH_IMAGE_CONFIG=true \
   OVERRIDE_PV_PLUGINS_WITH_IMAGE_PLUGINS=true \
@@ -37,7 +37,7 @@ container image for OpenShift.
 *  Create a pipeline
 
    ```
-   oc process -f jenkins-pipeline-template.yaml|oc apply -f- -n jenkins-builder
+   oc process -f jenkins-pipeline-template.yaml|oc apply -f- -n test-jenkins-builder
    ```
 
 * Run the pipeline job
