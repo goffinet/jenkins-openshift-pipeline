@@ -147,7 +147,7 @@ parameters:
     value: master
   - name: PROJECT
     description: "Name of the destination project"
-    value: jenkins-builder
+    value: test-jenkins-builder
   - name: GIT_REPO
     description: "URL of the repository with Jenkins configuration"
     value: https://github.com/goffinet/jenkins-openshift-pipeline
