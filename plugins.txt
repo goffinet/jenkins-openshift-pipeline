@@ -1,7 +1,7 @@
 ansicolor
 git-client
 gitlab-plugin
-durable-task
-rebuild
-configuration-as-code-support
-configuration-as-code
+#durable-task
+#rebuild
+#configuration-as-code-support
+#configuration-as-code
