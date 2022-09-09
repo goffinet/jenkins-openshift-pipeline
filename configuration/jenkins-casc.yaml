@@ -1,0 +1,13 @@
+12 lines (10 sloc)  263 Bytes
+
+jenkins:
+  systemMessage: "Jenkins configured automatically by Jenkins Configuration as Code plugin\n\n"
+  numExecutors: 5
+  scmCheckoutRetryCount: 2
+  mode: NORMAL
+
+  globalNodeProperties:
+    - envVars:
+        env:
+          - key: FOO
+            value: BAR
