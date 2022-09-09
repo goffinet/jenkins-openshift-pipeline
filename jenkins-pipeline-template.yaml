@@ -50,6 +50,20 @@ objects:
         local: false
       referencePolicy:
         type: Local
+  - apiVersion: "v1"
+    kind: "BuildConfig"
+    metadata:
+      name: "build-image-jenkins-${GIT_BRANCH}"
+      namespace: ${PROJECT}
+    spec:
+      source:
+        git:
+          uri: ${GIT_REPO}
+          ref: ${GIT_BRANCH}
+        type: Git
+      strategy:
+        jenkinsPipelineStrategy:
+          jenkinsfile:
 
 parameters:
   - name: GIT_BRANCH
